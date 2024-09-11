@@ -8,13 +8,13 @@ from datetime import datetime
 from config.settings import TOKEN
 import asyncio
 
-# Set up logging
-logging.basicConfig(level=logging.DEBUG)
+handler = logging.FileHandler(filename='logs/discord.log', encoding='utf-8', mode='w')
 
 intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
 bot = commands.Bot(command_prefix='!', intents = intents)
+discord.utils.setup_logging(handler=handler, level=logging.DEBUG, root=False)
 
 @bot.event
 async def on_ready():
@@ -34,7 +34,7 @@ async def main():
     try:
       async with bot:
         await load()
-        await bot.start(TOKEN, log_handler=handler, log_level=logging.DEBUG)
+        await bot.start(TOKEN)
     except asyncio.CancelledError:
         print("Main coroutine was cancelled.")
 

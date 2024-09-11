@@ -26,8 +26,8 @@ async def get_session_results(session_key='latest'):
   session = aiohttp.ClientSession()
 
   race_info, data = await asyncio.gather(
-    fetch(session, session_url + str(session_key)),
-    fetch(session, positions_url + str(session_key))
+    fetch(session, str(URL(session_url).with_query({"session_key": session_key}))),
+    fetch(session, str(URL(positions_url).with_query({"session_key": session_key})))
   )
   await session.close()
 
