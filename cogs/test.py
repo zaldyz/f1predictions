@@ -46,7 +46,7 @@ class Slash(commands.Cog):
   @app_commands.command(name="members")
   async def members(self, interaction: discord.Interaction):
     guild = interaction.guild
-    members = [f"{member.name} {member.discriminator}" for member in guild.members]
+    members = [f"{member.name} {member.discriminator} {member.id}" for member in guild.members]
     await interaction.response.send_message(repr(members[1]))
 
 async def setup(bot):
