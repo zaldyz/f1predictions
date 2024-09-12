@@ -96,3 +96,26 @@ sessions = {
     "49": "Shanghai, China",
     "6": "Imola, Italy"
 }
+
+drivers = {
+    1: "Max Verstappen",
+    3: "Daniel Ricciardo",
+    4: "Lando Norris",
+    10: "Pierre Gasly",
+    11: "Sergio Perez",
+    14: "Fernando Alonso",
+    16: "Charles Leclerc",
+    18: "Lance Stroll",
+    20: "Kevin Magnussen",
+    22: "Yuki Tsunoda",
+    23: "Alexander Albon",
+    24: "Zhou Guanyu",
+    27: "Nico Hulkenberg",
+    31: "Esteban Ocon",
+    43: "Franco Colapinto",
+    44: "Lewis Hamilton",
+    55: "Carlos Sainz Jr.",
+    63: "George Russell",
+    77: "Valtteri Bottas",
+    81: "Oscar Piastri",
+}

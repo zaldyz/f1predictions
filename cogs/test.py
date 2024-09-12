@@ -12,7 +12,36 @@ class Slash(commands.Cog):
 
   @app_commands.command(name="slash", description="test slash command")
   async def ping(self, interaction: discord.Interaction):
-    await interaction.response.send_message(f"Pong!")
+
+    db = self.bot.mongoConnect["f1-predictions"]
+    collection = db["scores"]
+    res = await collection.find_one({})
+    await interaction.response.send_message(repr(res))
+
+  @app_commands.command(name="role")
+  async def create_role(self, interaction: discord.Interaction):
+    # TODO Create a helper function to check this
+    role = discord.utils.get(interaction.guild.roles, name="Predictions")
+    created = False
+    if not role:
+      await interaction.guild.create_role(name="Predictions", colour=discord.Colour(0xE8112D), mentionable=True)
+      role = discord.utils.get(interaction.guild.roles, name="Predictions")
+      created = True
+    
+    added = False
+    if role not in interaction.user.roles:
+      await interaction.user.add_roles(role)
+      added = True
+    # await interaction.message.author.add_roles(role)
+    await interaction.response.send_message(f"Role created: {created} Role added: {added}")
+  
+  @app_commands.command(name="remind")
+  async def remind(self, interaction: discord.Interaction):
+    role = discord.utils.get(interaction.guild.roles, name="Predictions")
+    if not role:
+      await interaction.guild.create_role(name="Predictions", colour=discord.Colour(0xE8112D))
+      role = discord.utils.get(interaction.guild.roles, name="Predictions")
+    await interaction.response.send_message(f"{role.mention} ALERT HEHEH")
 
   @app_commands.command(name="members")
   async def members(self, interaction: discord.Interaction):
