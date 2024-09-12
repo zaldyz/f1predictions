@@ -1,7 +1,9 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
-from utils.helpers import fetchScores
+from mongo.helpers import addPlayerToScoreboard, fetchScores
+from mongo.helpers import insertNewGuild
+from mongo.helpers import removeGuild
 from datetime import datetime
 
 LEADERBOARD_LENGTH = 10
@@ -18,61 +20,17 @@ class Scoreboard(commands.Cog):
   async def on_guild_join(self, guild):
     print(f"Joined a new guild: {guild.name} (ID: {guild.id})")
     await guild.create_role(name="Predictions", colour=discord.Colour(0xE8112D), mentionable=True)
-    db = self.bot.mongoConnect["f1-predictions"]
-    collection = db["scores"]
-    try:
-      await collection.insert_one({
-        "guild_id": guild.id,
-        "scoreboard": {},
-        "latest_preds": [],
-        "previous_preds": {},
-      })
-    except:
-      print("A Database error has occured")
+    await insertNewGuild(self.bot, guild.id)
       
-
   @commands.Cog.listener()
   async def on_guild_remove(self, guild):
     print(f'Removed from guild {guild.name}')
-    db = self.bot.mongoConnect["f1-predictions"]
-    collection = db["scores"]
-    try:
-      await collection.delete_one({
-        "guild_id": guild.id,
-      })
-    except:
-      print("A Database error has occured")
+    await removeGuild(self.bot, guild.id)
   
   @app_commands.command(name="join")
   async def player_join(self, interaction: discord.Interaction):
-    db = self.bot.mongoConnect["f1-predictions"]
-    collection = db["scores"]
-
-    result = await collection.update_one(
-        {
-          "guild_id": interaction.guild.id,
-          f"scoreboard.{interaction.user.id}": {
-            "$exists": False
-          }
-        },
-        {
-          "$set": {
-            f"scoreboard.{interaction.user.id}": {
-              # TODO: Might be better to use fetch_user on their id to
-              # ensure display_name stays updated
-              "display_name": interaction.user.display_name,
-              "score": 0,
-            }
-          }
-        }
-    )
-    message = ""
-    if result.matched_count == 0:
-      message = f"{interaction.user.mention} has already joined."
-    elif result.modified_count == 0:
-      message = "Something funky has happened, check logs"
-    else:
-      message = f"{interaction.user.mention} has successfully joined!"
+    message = await addPlayerToScoreboard(self.bot, interaction.guild.id, interaction.user)
+    
 
     # TODO Create a helper function to check this
     role = discord.utils.get(interaction.guild.roles, name="Predictions")
@@ -106,8 +64,6 @@ class Scoreboard(commands.Cog):
     embed.set_author(name="F1Predictions", icon_url=self.bot.user.avatar.url)
     if user_index > -1:
       embed.set_footer(text=f"@{interaction.user.display_name}, you are rank #{user_index + 1} of {num_players} with a score of {user_score['score']}")
-    # for i, user in enumerate(scores):
-      # desc += f"**{i + 1}. {user['display_name']}:** {user['score']} pts.\n"
     def format_leaderboard_entry(x):
       i, user = x
       return f"**{i + 1}. {user['display_name']}:** {user['score']} points"

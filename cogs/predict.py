@@ -48,7 +48,9 @@ class Predictions(commands.Cog):
   @app_commands.choices(p10=
     [discord.app_commands.Choice(name=drivers[driver_num], value=driver_num) for driver_num in drivers])
   async def predict(interaction: discord.Interaction, p1: discord.app_commands.Choice[int], p2: discord.app_commands.Choice[int], p3: discord.app_commands.Choice[int], p4: discord.app_commands.Choice[int], p5: discord.app_commands.Choice[int], p6: discord.app_commands.Choice[int], p7: discord.app_commands.Choice[int], p8: discord.app_commands.Choice[int], p9: discord.app_commands.Choice[int], p10: discord.app_commands.Choice[int]):
-      await interaction.response.send_message(f"{interaction.user.mention} has predicted: `🥇 P1: {p1.name}, 🥈 P2: {p2.name}, 🥉 P3: {p3.name}, P4: {p4.name}, P5: {p5.name}, P6: {p6.name}, P7: {p7.name}, P8: {p8.name}, P9: {p9.name}, P10: {p10.name}`")
+    # TODO: Do all the Join command stuff here aswell
+    # Push the predictions to latest predictions
+    await interaction.response.send_message(f"{interaction.user.mention} has predicted: `🥇 P1: {p1.name}, 🥈 P2: {p2.name}, 🥉 P3: {p3.name}, P4: {p4.name}, P5: {p5.name}, P6: {p6.name}, P7: {p7.name}, P8: {p8.name}, P9: {p9.name}, P10: {p10.name}`")
 
 async def setup(bot):
   await bot.add_cog(Predictions(bot))
