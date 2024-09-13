@@ -21,7 +21,7 @@ class Results(commands.Cog):
     results = await get_session_results()
     print(results)
 
-    positions = [f"{display_position_str[position['position']]:<4}: {position['driver_name']}" for position in results['positions']]
+    positions = [f"{display_position_str[position['position']]:<4}: {position['driver_flag']} {position['driver_name']}" for position in results['positions']]
     order = "\n".join(positions)
 
     date_obj = datetime.fromisoformat(results['info'][0]['date_start'])
@@ -63,7 +63,7 @@ class Results(commands.Cog):
       
     results = await get_session_results(session_info[0]['session_key'])
 
-    positions = [f"{display_position_str[position['position']]:<4}: {position['driver_name']}" for position in results['positions']]
+    positions = [f"{display_position_str[position['position']]:<4}: {position['driver_flag']} {position['driver_name']}" for position in results['positions']]
     order = "\n".join(positions)
 
     date_obj = datetime.fromisoformat(results['info'][0]['date_start'])

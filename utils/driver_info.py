@@ -119,3 +119,49 @@ drivers = {
     77: "Valtteri Bottas",
     81: "Oscar Piastri",
 }
+
+driver_flags = {
+    1: "🇳🇱",  # Max Verstappen (Netherlands)
+    2: "🇺🇸",  # Logan Sargeant (USA)
+    3: "🇦🇺",  # Daniel Ricciardo (Australia)
+    4: "🇬🇧",  # Lando Norris (United Kingdom)
+    5: "🇩🇪",  # Sebastian Vettel (Germany) - Retired
+    6: "🇩🇪",  # Nico Rosberg (Germany) - Retired
+    7: "🇫🇮",  # Kimi Raikkönen (Finland) - Retired
+    8: "🇫🇷",  # Romain Grosjean (France) - Retired
+    9: "🇸🇪",  # Marcus Ericsson (Sweden) - Retired
+    10: "🇫🇷",  # Pierre Gasly (France)
+    11: "🇲🇽",  # Sergio Perez (Mexico)
+    12: "🇧🇷",  # Felipe Nasr (Brazil) - Retired
+    13: "🇻🇪",  # Pastor Maldonado (Venezuela) - Retired
+    14: "🇪🇸",  # Fernando Alonso (Spain)
+    16: "🇲🇨",  # Charles Leclerc (Monaco)
+    18: "🇨🇦",  # Lance Stroll (Canada)
+    19: "🇧🇷",  # Felipe Massa (Brazil) - Retired
+    20: "🇩🇰",  # Kevin Magnussen (Denmark)
+    21: "🇳🇱",  # Nyck de Vries (Netherlands) - Not racing
+    22: "🇯🇵",  # Yuki Tsunoda (Japan)
+    23: "🇹🇭",  # Alexander Albon (Thailand)
+    24: "🇨🇳",  # Zhou Guanyu (China)
+    25: "🇫🇷",  # Jean-Éric Vergne (France) - Retired
+    26: "🇷🇺",  # Daniil Kvyat (Russia) - Retired
+    27: "🇩🇪",  # Nico Hulkenberg (Germany)
+    28: "🇬🇧",  # Will Stevens (United Kingdom) - Retired
+    30: "🇬🇧",  # Jolyon Palmer (United Kingdom) - Retired
+    31: "🇫🇷",  # Esteban Ocon (France)
+    33: "🇳🇱",  # Max Verstappen (Netherlands) - Reserved
+    35: "🇷🇺",  # Sergey Sirotkin (Russia) - Retired
+    43: "🇦🇷",  # Franco Colapinto (Argentina)
+    44: "🇬🇧",  # Lewis Hamilton (United Kingdom)
+    47: "🇩🇪",  # Mick Schumacher (Germany) - Not racing
+    53: "🇺🇸",  # Alexander Rossi (USA) - Retired
+    55: "🇪🇸",  # Carlos Sainz Jr. (Spain)
+    63: "🇬🇧",  # George Russell (United Kingdom)
+    77: "🇫🇮",  # Valtteri Bottas (Finland)
+    81: "🇦🇺",  # Oscar Piastri (Australia)
+    88: "🇲🇨",  # Rio Haryanto (Monaco) - Retired
+    89: "🇰🇷",  # Jack Aitken (South Korea) - Retired
+    94: "🇩🇪",  # Pascal Wehrlein (Germany) - Retired
+    98: "🇪🇸",  # Roberto Merhi (Spain) - Retired
+    99: "🇮🇹",  # Antonio Giovinazzi (Italy) - Retired
+}

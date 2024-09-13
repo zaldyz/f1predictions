@@ -1,6 +1,7 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
+from datetime import datetime
 
 class Slash(commands.Cog):
   def __init__(self, bot):
@@ -49,5 +50,12 @@ class Slash(commands.Cog):
     members = [f"{member.name} {member.discriminator} {member.id} {member.display_name}" for member in guild.members]
     await interaction.response.send_message(" ".join(members))
 
+  @app_commands.command(name="next_race")
+  async def next_race(self, interaction: discord.Interaction):
+    now = datetime.now()
+    db = self.bot.mongoConnect['f1-predictions']
+    collection = db['races']
+    closest = await collection.find({"date_start": {"$gt": now}}).sort("date_start", 1).limit(1).next()
+    await interaction.response.send_message(repr(closest))
 async def setup(bot):
   await bot.add_cog(Slash(bot))

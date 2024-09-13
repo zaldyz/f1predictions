@@ -3,6 +3,7 @@ import asyncio
 from yarl import URL
 from datetime import datetime
 from .driver_info import drivers_2024
+from .driver_info import driver_flags
 
 positions_url = "https://api.openf1.org/v1/position"
 session_url = "https://api.openf1.org/v1/sessions"
@@ -43,7 +44,8 @@ async def get_session_results(session_key='latest'):
         final_data.append({
            "driver_number": pos['driver_number'],
            "position": pos['position'],
-           "driver_name" : drivers_2024[pos['driver_number']]
+           "driver_name" : drivers_2024[pos['driver_number']],
+           "driver_flag": driver_flags[pos['driver_number']]
         })
         seen.add(pos['driver_number'])
   

@@ -4,9 +4,8 @@ from discord.ext import commands
 from mongo.helpers import addPlayerToScoreboard, fetchScores
 from mongo.helpers import insertNewGuild
 from mongo.helpers import removeGuild
+from config.settings import LEADERBOARD_LENGTH
 from datetime import datetime
-
-LEADERBOARD_LENGTH = 10
 
 class Scoreboard(commands.Cog):
   def __init__(self, bot):
@@ -30,7 +29,6 @@ class Scoreboard(commands.Cog):
   @app_commands.command(name="join")
   async def player_join(self, interaction: discord.Interaction):
     message = await addPlayerToScoreboard(self.bot, interaction.guild.id, interaction.user)
-    
 
     # TODO Create a helper function to check this
     role = discord.utils.get(interaction.guild.roles, name="Predictions")
@@ -56,7 +54,7 @@ class Scoreboard(commands.Cog):
     scores = scores[:LEADERBOARD_LENGTH]
 
     embed = discord.Embed(
-      colour=discord.Colour.red(),
+      colour=discord.Colour.yellow(),
       title=f"**Top {LEADERBOARD_LENGTH} Leaderboard**",
       timestamp=datetime.now()
     )
