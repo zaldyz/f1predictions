@@ -30,7 +30,7 @@ async def on_ready():
 
 async def load():
   # Load cogs
-  for cog in ['test', 'results', 'scoreboard', 'predict']:
+  for cog in ['results', 'scoreboard', 'predict']:
     await bot.load_extension(f'cogs.{cog}')
 
 async def main():

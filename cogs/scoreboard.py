@@ -6,6 +6,7 @@ from mongo.helpers import insertNewGuild
 from mongo.helpers import removeGuild
 from config.settings import LEADERBOARD_LENGTH
 from datetime import datetime
+from utils.embed import create_empty_scoreboard
 
 class Scoreboard(commands.Cog):
   def __init__(self, bot):
@@ -26,7 +27,7 @@ class Scoreboard(commands.Cog):
     print(f'Removed from guild {guild.name}')
     await removeGuild(self.bot, guild.id)
   
-  @app_commands.command(name="join")
+  @app_commands.command(name="join", description="Join the game to recieve notifications of upcoming races")
   async def player_join(self, interaction: discord.Interaction):
     message = await addPlayerToScoreboard(self.bot, interaction.guild.id, interaction.user)
 
@@ -40,11 +41,11 @@ class Scoreboard(commands.Cog):
       await interaction.user.add_roles(role)
     await interaction.response.send_message(message, ephemeral=True)
 
-  @app_commands.command(name="leaderboard")
+  @app_commands.command(name="leaderboard", description="Display the leaderboard of players and their current scores")
   async def show_leaderboard(self, interaction: discord.Interaction):
     scores = await fetchScores(self.bot, interaction.guild.id)
     if not scores:
-      await interaction.response.send_message("uh oh this is empty, join the game by using /join or by making your first /predict")
+      await interaction.response.send_message(embed=create_empty_scoreboard(self.bot))
       return
     user_score = scores[str(interaction.user.id)]
     scores = [{"id": id, "display_name": value["display_name"], "score": value["score"]} for id, value in scores.items()]
@@ -55,7 +56,7 @@ class Scoreboard(commands.Cog):
 
     embed = discord.Embed(
       colour=discord.Colour.yellow(),
-      title=f"**Top {LEADERBOARD_LENGTH} Leaderboard**",
+      title=f"**Top {LEADERBOARD_LENGTH} Leaderboard** :trophy:",
       timestamp=datetime.now()
     )
     embed.set_footer(text="You are not ranked yet.")
@@ -64,7 +65,7 @@ class Scoreboard(commands.Cog):
       embed.set_footer(text=f"@{interaction.user.display_name}, you are rank #{user_index + 1} of {num_players} with a score of {user_score['score']}")
     def format_leaderboard_entry(x):
       i, user = x
-      return f"**{i + 1}. {user['display_name']}:** {user['score']} points"
+      return f"{i + 1}. **{user['display_name']}**: **{user['score']}** points"
     desc = list(map(format_leaderboard_entry, enumerate(scores)))
     desc = "\n".join(desc)
     embed.add_field(name="", value=desc, inline=False)

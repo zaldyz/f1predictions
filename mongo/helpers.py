@@ -1,5 +1,5 @@
 
-from datetime import datetime
+from datetime import datetime, timezone
 
 async def fetchScores(bot, guild_id):
   """Fetch the scores for a given guild"""
@@ -88,8 +88,44 @@ async def submitPrediction(bot, guild_id, user_id, guesses):
 
 async def getNextRaceInfo(bot):
   """Fetches the next upcoming Sprint Shootout, Sprint, Qualifying or Race session info"""
-  now = datetime.now()
+  now = datetime.now(timezone.utc)
   db = bot.mongoConnect['f1-predictions']
   collection = db['races']
   closest = await collection.find({"date_start": {"$gt": now}}).sort("date_start", 1).limit(1).next()
   return closest
+
+async def getMostRecentSession(bot):
+  """Fetches the most recently finished session and deletes it (if it exists)"""
+  now = datetime.now(timezone.utc)
+  db = bot.mongoConnect['f1-predictions']
+  collection = db['races']
+  recent = await collection.find({"date_start": {"$lt": now}}).sort("date_start", -1).limit(1).next()
+  if recent:
+    # await collection.delete_one({"_id": recent['_id']})
+    return recent
+  else:
+    return False
+  
+async def getLatestPredictions(bot, guild_id):
+  """Fetches all users' latest predictions for a given guild"""
+  db = bot.mongoConnect['f1-predictions']
+  collection = db['scores']
+  document = await collection.find_one({"guild_id": guild_id})
+  return document['latest_preds']
+
+async def awardScoreBoardPoints(bot, guild_id, points_to_award, latest_preds):
+  """Increments the score for each user by the specified amount, also deletes the latests predictions"""
+  db = bot.mongoConnect['f1-predictions']
+  collection = db['scores']
+  try:
+    await collection.update_one({"guild_id": guild_id}, {
+      "$inc": {
+        f"scoreboard.{user_id}.score": points_to_award[user_id] for user_id in points_to_award
+      },
+      "$set": {
+        "previous_preds": latest_preds,
+        "latest_preds": {}
+      }
+    })
+  except Exception as e:
+    print(f"a Database error has occured: {e}")

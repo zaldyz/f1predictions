@@ -30,10 +30,12 @@ drivers_2024 = {
     30: "Jolyon Palmer",  # Retired (not racing in 2024)
     31: "Esteban Ocon",
     33: "Max Verstappen",  # Reserved but now using #1
+    38: "Oliver Bearman",
     35: "Sergey Sirotkin",  # Retired (not racing in 2024)
     43: "Franco Colapinto",
     44: "Lewis Hamilton",
     47: "Mick Schumacher",  # Not racing in 2024
+    50: "Oliver Bearman",
     53: "Alexander Rossi",  # Retired (not racing in 2024)
     55: "Carlos Sainz Jr.",
     63: "George Russell",
@@ -114,6 +116,7 @@ drivers = {
     31: "Esteban Ocon",
     43: "Franco Colapinto",
     44: "Lewis Hamilton",
+    50: "Oliver Bearman",
     55: "Carlos Sainz Jr.",
     63: "George Russell",
     77: "Valtteri Bottas",
@@ -151,9 +154,11 @@ driver_flags = {
     31: "🇫🇷",  # Esteban Ocon (France)
     33: "🇳🇱",  # Max Verstappen (Netherlands) - Reserved
     35: "🇷🇺",  # Sergey Sirotkin (Russia) - Retired
+    38: "🇬🇧",  # Oliver Bearman
     43: "🇦🇷",  # Franco Colapinto (Argentina)
     44: "🇬🇧",  # Lewis Hamilton (United Kingdom)
     47: "🇩🇪",  # Mick Schumacher (Germany) - Not racing
+    50: "🇬🇧",  # Oliver Bearman
     53: "🇺🇸",  # Alexander Rossi (USA) - Retired
     55: "🇪🇸",  # Carlos Sainz Jr. (Spain)
     63: "🇬🇧",  # George Russell (United Kingdom)
