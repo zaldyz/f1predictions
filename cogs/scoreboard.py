@@ -6,7 +6,7 @@ from mongo.helpers import insertNewGuild
 from mongo.helpers import removeGuild
 from config.settings import LEADERBOARD_LENGTH
 from datetime import datetime
-from utils.embed import create_empty_scoreboard
+from utils.embed import create_empty_scoreboard, create_rules_embed
 
 class Scoreboard(commands.Cog):
   def __init__(self, bot):
@@ -27,7 +27,7 @@ class Scoreboard(commands.Cog):
     print(f'Removed from guild {guild.name}')
     await removeGuild(self.bot, guild.id)
   
-  @app_commands.command(name="join", description="Join the game to recieve notifications of upcoming races")
+  @app_commands.command(name="join", description="Join the game to recieve notifications of upcoming races ")
   async def player_join(self, interaction: discord.Interaction):
     message = await addPlayerToScoreboard(self.bot, interaction.guild.id, interaction.user)
 
@@ -41,7 +41,7 @@ class Scoreboard(commands.Cog):
       await interaction.user.add_roles(role)
     await interaction.response.send_message(message, ephemeral=True)
 
-  @app_commands.command(name="leaderboard", description="Display the leaderboard of players and their current scores")
+  @app_commands.command(name="leaderboard", description="Display the leaderboard of players and their current scores :trophy:")
   async def show_leaderboard(self, interaction: discord.Interaction):
     scores = await fetchScores(self.bot, interaction.guild.id)
     if not scores:
@@ -69,6 +69,11 @@ class Scoreboard(commands.Cog):
     desc = list(map(format_leaderboard_entry, enumerate(scores)))
     desc = "\n".join(desc)
     embed.add_field(name="", value=desc, inline=False)
+    await interaction.response.send_message(embed=embed)
+
+  @app_commands.command(name="rules", description="Display the rules and instructions for the game :notepad_spiral:")
+  async def show_rules(self, interaction: discord.Interaction):
+    embed = create_rules_embed()
     await interaction.response.send_message(embed=embed)
 
 async def setup(bot):

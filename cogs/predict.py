@@ -17,7 +17,7 @@ class Predictions(commands.Cog):
   async def on_ready(self):
     print("Predictions cog loaded")
 
-  @app_commands.command(name="predict", description="Submit your prediction for the Top 10 Drivers!")
+  @app_commands.command(name="predict", description="Submit your prediction for the Top 10 Drivers! :race_car:")
   @app_commands.describe(p1="Select your driver to finish P1")
   @app_commands.describe(p2="Select your driver to finish P2")
   @app_commands.describe(p3="Select your driver to finish P3")
@@ -84,16 +84,16 @@ class Predictions(commands.Cog):
     embed.set_footer(text=f"Session Starts in: {time_until(next_session_info['date_start'])}")
     await interaction.response.send_message(embed=embed)
   
-  @app_commands.command(name="remind", description="Send a reminder to players of the time until the next session starts")
+  @app_commands.command(name="remind", description="Send a reminder to players of the time until the next session starts :mega:")
   async def remind(self, interaction: discord.Interaction):
     role = discord.utils.get(interaction.guild.roles, name="Predictions")
     if not role:
       await interaction.guild.create_role(name="Predictions", colour=discord.Colour(0xE8112D))
       role = discord.utils.get(interaction.guild.roles, name="Predictions")
     next_session_info = await getNextRaceInfo(self.bot)
-    await interaction.response.send_message(f"{role.mention} The next upcoming session **{next_session_info['circuit']}, {next_session_info['country']}: {next_session_info['session_type']}** starts in **{time_until(next_session_info['date_start'])}**.\n Use `/predict` to make your Top 10 prediction before the session starts!")
+    await interaction.response.send_message(f"{role.mention}\nThe next upcoming session **{next_session_info['circuit']}, {next_session_info['country']}: {next_session_info['session_type']}** starts in **{time_until(next_session_info['date_start'])}**.\nUse `/predict` to make your Top 10 prediction before the session starts!")
   
-  @app_commands.command(name="end_session", description=":warning: Please DO NOT use this, let me use it only for now")
+  @app_commands.command(name="end_session", description=":warning: Please DO NOT use this, let me use it only for now :warning:")
   async def end_session(self, interaction: discord.Interaction):
     # Defer here
     await interaction.response.defer()

@@ -26,7 +26,7 @@ async def on_ready():
     print(f"Synced {len(synced)} command(s)")
   except Exception as e:
     print(e)
-  await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='F1 | use /latest'))
+  await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='F1 🏁 | use /latest'))
 
 async def load():
   # Load cogs
