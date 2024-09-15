@@ -30,7 +30,7 @@ async def create_round_end_scoreboard(bot, points_awarded, circuit, country, ses
   def format_leaderboard_entry(x):
     i, user = x
     return f"{i + 1}. **{user['display_name']}**: **{user['score']}** points"
-  desc = list(map(format_leaderboard_entry, enumerate(sorted(leaderboard, key=lambda x: x['score']), reversed=True)))
+  desc = list(map(format_leaderboard_entry, enumerate(sorted(leaderboard, key=lambda x: x['score'], reverse=True))))
   desc = "\n".join(desc)
   embed.add_field(name="", value=desc, inline=False)
   return embed
