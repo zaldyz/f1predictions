@@ -27,7 +27,7 @@ drivers_2024 = {
     26: "Daniil Kvyat",  # Retired (not racing in 2024)
     27: "Nico Hulkenberg",
     28: "Will Stevens",  # Retired (not racing in 2024)
-    30: "Jolyon Palmer",  # Retired (not racing in 2024)
+    30: "Liam Lawson",  # Retired (not racing in 2024)
     31: "Esteban Ocon",
     33: "Max Verstappen",  # Reserved but now using #1
     38: "Oliver Bearman",
@@ -121,6 +121,7 @@ drivers = {
     63: "George Russell",
     77: "Valtteri Bottas",
     81: "Oscar Piastri",
+    30: "Liam Lawson"
 }
 
 driver_flags = {
@@ -150,7 +151,7 @@ driver_flags = {
     26: "🇷🇺",  # Daniil Kvyat (Russia) - Retired
     27: "🇩🇪",  # Nico Hulkenberg (Germany)
     28: "🇬🇧",  # Will Stevens (United Kingdom) - Retired
-    30: "🇬🇧",  # Jolyon Palmer (United Kingdom) - Retired
+    30: "🇳🇿",  # Liam Lawson
     31: "🇫🇷",  # Esteban Ocon (France)
     33: "🇳🇱",  # Max Verstappen (Netherlands) - Reserved
     35: "🇷🇺",  # Sergey Sirotkin (Russia) - Retired

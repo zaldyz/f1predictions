@@ -16,21 +16,28 @@ async def get_session_info(circuit_key, session_type, year):
   """Fetch session info for a particular circuit, session_type and year"""
   session = aiohttp.ClientSession()
 
-  url_with_params = str(URL(session_url).with_query({"circuit_key": str(circuit_key), "session_name": session_type, "year": str(year)}))
-  session_info = await fetch(session, url_with_params)
-
-  await session.close()
+  try:
+    url_with_params = str(URL(session_url).with_query({"circuit_key": str(circuit_key), "session_name": session_type, "year": str(year)}))
+    session_info = await fetch(session, url_with_params)
+  except Exception as e:
+    print(e)
+    session_info = {}
+  finally:
+    await session.close()
   return session_info
 
 async def get_session_results(session_key='latest'):
   """Fetch driver positions for a session"""        
   session = aiohttp.ClientSession()
-
-  race_info, data = await asyncio.gather(
-    fetch(session, str(URL(session_url).with_query({"session_key": session_key}))),
-    fetch(session, str(URL(positions_url).with_query({"session_key": session_key})))
-  )
-  await session.close()
+  try:
+    race_info, data = await asyncio.gather(
+      fetch(session, str(URL(session_url).with_query({"session_key": session_key}))),
+      fetch(session, str(URL(positions_url).with_query({"session_key": session_key})))
+    )
+  except Exception as e:
+    print(e)
+  finally:
+    await session.close()
 
   positions = []
 
