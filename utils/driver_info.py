@@ -5,14 +5,14 @@ drivers_2024 = {
     2: "Logan Sargeant",
     3: "Daniel Ricciardo",
     4: "Lando Norris",
-    5: "Sebastian Vettel",  # Retired (not racing in 2024)
-    6: "Nico Rosberg",  # Retired (not racing in 2024)
-    7: "Kimi Raikkönen",  # Retired (not racing in 2024)
+    5: "Gabriel Bortoleto",
+    6: "Isack Hadjar",
+    7: "Jack Doohan",
     8: "Romain Grosjean",  # Retired (not racing in 2024)
     9: "Marcus Ericsson",  # Retired (not racing in 2024)
     10: "Pierre Gasly",
     11: "Sergio Perez",
-    12: "Felipe Nasr",  # Retired (not racing in 2024)
+    12: "Andrea Kimi Antonelli",
     13: "Pastor Maldonado",  # Retired (not racing in 2024)
     14: "Fernando Alonso",
     16: "Charles Leclerc",
@@ -27,10 +27,10 @@ drivers_2024 = {
     26: "Daniil Kvyat",  # Retired (not racing in 2024)
     27: "Nico Hulkenberg",
     28: "Will Stevens",  # Retired (not racing in 2024)
-    30: "Liam Lawson",  # Retired (not racing in 2024)
+    30: "Liam Lawson",
     31: "Esteban Ocon",
     33: "Max Verstappen",  # Reserved but now using #1
-    38: "Oliver Bearman",
+    87: "Oliver Bearman",
     35: "Sergey Sirotkin",  # Retired (not racing in 2024)
     43: "Franco Colapinto",
     44: "Lewis Hamilton",
@@ -101,27 +101,25 @@ sessions = {
 
 drivers = {
     1: "Max Verstappen",
-    3: "Daniel Ricciardo",
     4: "Lando Norris",
+    5: "Gabriel Bortoleto",
+    6: "Isack Hadjar",
+    7: "Jack Doohan",
     10: "Pierre Gasly",
-    11: "Sergio Perez",
+    12: "Andrea Kimi Antonelli",
     14: "Fernando Alonso",
     16: "Charles Leclerc",
     18: "Lance Stroll",
-    20: "Kevin Magnussen",
     22: "Yuki Tsunoda",
     23: "Alexander Albon",
-    24: "Zhou Guanyu",
     27: "Nico Hulkenberg",
     31: "Esteban Ocon",
-    43: "Franco Colapinto",
     44: "Lewis Hamilton",
-    50: "Oliver Bearman",
     55: "Carlos Sainz Jr.",
     63: "George Russell",
-    77: "Valtteri Bottas",
     81: "Oscar Piastri",
-    30: "Liam Lawson"
+    30: "Liam Lawson",
+    87: "Oliver Bearman"
 }
 
 driver_flags = {
@@ -129,14 +127,15 @@ driver_flags = {
     2: "🇺🇸",  # Logan Sargeant (USA)
     3: "🇦🇺",  # Daniel Ricciardo (Australia)
     4: "🇬🇧",  # Lando Norris (United Kingdom)
-    5: "🇩🇪",  # Sebastian Vettel (Germany) - Retired
-    6: "🇩🇪",  # Nico Rosberg (Germany) - Retired
-    7: "🇫🇮",  # Kimi Raikkönen (Finland) - Retired
-    8: "🇫🇷",  # Romain Grosjean (France) - Retired
+    5: "🇧🇷",  # Gabriel Bortoleto
+    6: "🇫🇷",  # Isack Hadjar
+    7: "🇦🇺",  # Jack Doohan (Australia)
+    61: "🇦🇺",  # Jack Doohan (Australia)
+    8: "🇫🇷",  # Romain Grosjean (France)  - Retired
     9: "🇸🇪",  # Marcus Ericsson (Sweden) - Retired
     10: "🇫🇷",  # Pierre Gasly (France)
     11: "🇲🇽",  # Sergio Perez (Mexico)
-    12: "🇧🇷",  # Felipe Nasr (Brazil) - Retired
+    12: "🇮🇹",  # Andrea Kimi Antonelli (Italy)
     13: "🇻🇪",  # Pastor Maldonado (Venezuela) - Retired
     14: "🇪🇸",  # Fernando Alonso (Spain)
     16: "🇲🇨",  # Charles Leclerc (Monaco)
@@ -165,6 +164,7 @@ driver_flags = {
     63: "🇬🇧",  # George Russell (United Kingdom)
     77: "🇫🇮",  # Valtteri Bottas (Finland)
     81: "🇦🇺",  # Oscar Piastri (Australia)
+    87: "🇬🇧",  # Oliver Bearman
     88: "🇲🇨",  # Rio Haryanto (Monaco) - Retired
     89: "🇰🇷",  # Jack Aitken (South Korea) - Retired
     94: "🇩🇪",  # Pascal Wehrlein (Germany) - Retired

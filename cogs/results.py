@@ -81,23 +81,7 @@ class Results(commands.Cog):
     embed.set_author(name="F1Predictions", icon_url=self.bot.user.avatar.url)
     embed.set_footer(text=f"Session Start: {date_obj.strftime("%B %d, %Y at %I:%M %p")}\n")
     await interaction.followup.send(f"{interaction.user.mention}, here are the session results.\n", embed=embed)
-  
-  # @app_commands.command(name="schedule")
-  # async def schedule(self, interaction: discord.Interaction):
-  #   db = self.bot.mongoConnect['f1-predictions']
-  #   collection = db['races']
-  #   sessions = collection.find({})
-  #   message = ""
-  #   australian_tz = pytz.timezone('Australia/Sydney')
-  #   async for session in sessions:
-  #     # Convert the datetime object to the Australian time zone
-  #     australian_time = session['date_start'].astimezone(australian_tz)
 
-  #     # Format the time to a readable string
-  #     formatted_time = australian_time.strftime('%B %d %I:%M %p')
-  #     message += f"{formatted_time} {session['circuit']} {session['country']} {session['session_type']}\n"
-
-  #   await interaction.response.send_message(f"`{message}`")
   @app_commands.command(name="driver_standings", description="Display the Driver Standings for any given season :military_medal:")
   @app_commands.describe(year="Select the season, providing none will automatically select current season")
   async def driver_standings(self, interaction: discord.Interaction, year: app_commands.Range[int, 1950, 2024] = 2024):

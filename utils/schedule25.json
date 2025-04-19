@@ -1,0 +1,332 @@
+[
+  {
+    "start_date": "2025-03-23T07:00:00+00:00",
+    "session_type": "Race",
+    "country": "China",
+    "circuit_name": "Shanghai"
+  },
+  {
+    "start_date": "2025-04-05T06:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "Japan",
+    "circuit_name": "Suzuka"
+  },
+  {
+    "start_date": "2025-04-06T05:00:00+00:00",
+    "session_type": "Race",
+    "country": "Japan",
+    "circuit_name": "Suzuka"
+  },
+  {
+    "start_date": "2025-04-12T15:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "Bahrain",
+    "circuit_name": "Sakhir"
+  },
+  {
+    "start_date": "2025-04-13T14:00:00+00:00",
+    "session_type": "Race",
+    "country": "Bahrain",
+    "circuit_name": "Sakhir"
+  },
+  {
+    "start_date": "2025-04-19T16:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "Saudi Arabia",
+    "circuit_name": "Jeddah"
+  },
+  {
+    "start_date": "2025-04-20T15:00:00+00:00",
+    "session_type": "Race",
+    "country": "Saudi Arabia",
+    "circuit_name": "Jeddah"
+  },
+  {
+    "start_date": "2025-05-02T20:00:00+00:00",
+    "session_type": "Sprint Shootout",
+    "country": "United States",
+    "circuit_name": "Miami"
+  },
+  {
+    "start_date": "2025-05-03T16:00:00+00:00",
+    "session_type": "Sprint",
+    "country": "United States",
+    "circuit_name": "Miami"
+  },
+  {
+    "start_date": "2025-05-03T20:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "United States",
+    "circuit_name": "Miami"
+  },
+  {
+    "start_date": "2025-05-04T20:00:00+00:00",
+    "session_type": "Race",
+    "country": "United States",
+    "circuit_name": "Miami"
+  },
+  {
+    "start_date": "2025-05-17T13:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "Italy",
+    "circuit_name": "Imola"
+  },
+  {
+    "start_date": "2025-05-18T13:00:00+00:00",
+    "session_type": "Race",
+    "country": "Italy",
+    "circuit_name": "Imola"
+  },
+  {
+    "start_date": "2025-05-24T14:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "Monaco",
+    "circuit_name": "Monaco"
+  },
+  {
+    "start_date": "2025-05-25T13:00:00+00:00",
+    "session_type": "Race",
+    "country": "Monaco",
+    "circuit_name": "Monaco"
+  },
+  {
+    "start_date": "2025-05-31T14:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "Spain",
+    "circuit_name": "Barcelona"
+  },
+  {
+    "start_date": "2025-06-01T13:00:00+00:00",
+    "session_type": "Race",
+    "country": "Spain",
+    "circuit_name": "Barcelona"
+  },
+  {
+    "start_date": "2025-06-14T20:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "Canada",
+    "circuit_name": "Montreal"
+  },
+  {
+    "start_date": "2025-06-15T18:00:00+00:00",
+    "session_type": "Race",
+    "country": "Canada",
+    "circuit_name": "Montreal"
+  },
+  {
+    "start_date": "2025-06-28T14:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "Austria",
+    "circuit_name": "Spielberg"
+  },
+  {
+    "start_date": "2025-06-29T13:00:00+00:00",
+    "session_type": "Race",
+    "country": "Austria",
+    "circuit_name": "Spielberg"
+  },
+  {
+    "start_date": "2025-07-05T14:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "United Kingdom",
+    "circuit_name": "Silverstone"
+  },
+  {
+    "start_date": "2025-07-06T14:00:00+00:00",
+    "session_type": "Race",
+    "country": "United Kingdom",
+    "circuit_name": "Silverstone"
+  },
+  {
+    "start_date": "2025-07-25T15:00:00+00:00",
+    "session_type": "Sprint Shootout",
+    "country": "Belgium",
+    "circuit_name": "Spa-Francorchamps"
+  },
+  {
+    "start_date": "2025-07-26T14:00:00+00:00",
+    "session_type": "Sprint",
+    "country": "Belgium",
+    "circuit_name": "Spa-Francorchamps"
+  },
+  {
+    "start_date": "2025-07-26T18:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "Belgium",
+    "circuit_name": "Spa-Francorchamps"
+  },
+  {
+    "start_date": "2025-07-27T13:00:00+00:00",
+    "session_type": "Race",
+    "country": "Belgium",
+    "circuit_name": "Spa-Francorchamps"
+  },
+  {
+    "start_date": "2025-08-02T14:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "Hungary",
+    "circuit_name": "Budapest"
+  },
+  {
+    "start_date": "2025-08-03T13:00:00+00:00",
+    "session_type": "Race",
+    "country": "Hungary",
+    "circuit_name": "Budapest"
+  },
+  {
+    "start_date": "2025-08-30T13:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "Netherlands",
+    "circuit_name": "Zandvoort"
+  },
+  {
+    "start_date": "2025-08-31T13:00:00+00:00",
+    "session_type": "Race",
+    "country": "Netherlands",
+    "circuit_name": "Zandvoort"
+  },
+  {
+    "start_date": "2025-09-06T14:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "Italy",
+    "circuit_name": "Monza"
+  },
+  {
+    "start_date": "2025-09-07T13:00:00+00:00",
+    "session_type": "Race",
+    "country": "Italy",
+    "circuit_name": "Monza"
+  },
+  {
+    "start_date": "2025-09-20T13:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "Azerbaijan",
+    "circuit_name": "Baku"
+  },
+  {
+    "start_date": "2025-09-21T11:00:00+00:00",
+    "session_type": "Race",
+    "country": "Azerbaijan",
+    "circuit_name": "Baku"
+  },
+  {
+    "start_date": "2025-10-04T13:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "Singapore",
+    "circuit_name": "Marina Bay"
+  },
+  {
+    "start_date": "2025-10-05T12:00:00+00:00",
+    "session_type": "Race",
+    "country": "Singapore",
+    "circuit_name": "Marina Bay"
+  },
+  {
+    "start_date": "2025-10-17T21:00:00+00:00",
+    "session_type": "Sprint Shootout",
+    "country": "United States",
+    "circuit_name": "Austin"
+  },
+  {
+    "start_date": "2025-10-18T19:00:00+00:00",
+    "session_type": "Sprint",
+    "country": "United States",
+    "circuit_name": "Austin"
+  },
+  {
+    "start_date": "2025-10-18T23:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "United States",
+    "circuit_name": "Austin"
+  },
+  {
+    "start_date": "2025-10-19T19:00:00+00:00",
+    "session_type": "Race",
+    "country": "United States",
+    "circuit_name": "Austin"
+  },
+  {
+    "start_date": "2025-10-25T21:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "Mexico",
+    "circuit_name": "Mexico City"
+  },
+  {
+    "start_date": "2025-10-26T20:00:00+00:00",
+    "session_type": "Race",
+    "country": "Mexico",
+    "circuit_name": "Mexico City"
+  },
+  {
+    "start_date": "2025-11-07T15:00:00+00:00",
+    "session_type": "Sprint Shootout",
+    "country": "Brazil",
+    "circuit_name": "Interlagos"
+  },
+  {
+    "start_date": "2025-11-08T14:00:00+00:00",
+    "session_type": "Sprint",
+    "country": "Brazil",
+    "circuit_name": "Interlagos"
+  },
+  {
+    "start_date": "2025-11-08T18:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "Brazil",
+    "circuit_name": "Interlagos"
+  },
+  {
+    "start_date": "2025-11-09T17:00:00+00:00",
+    "session_type": "Race",
+    "country": "Brazil",
+    "circuit_name": "Interlagos"
+  },
+  {
+    "start_date": "2025-11-22T04:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "United States",
+    "circuit_name": "Las Vegas"
+  },
+  {
+    "start_date": "2025-11-23T04:00:00+00:00",
+    "session_type": "Race",
+    "country": "United States",
+    "circuit_name": "Las Vegas"
+  },
+  {
+    "start_date": "2025-11-28T14:00:00+00:00",
+    "session_type": "Sprint Shootout",
+    "country": "Qatar",
+    "circuit_name": "Lusail"
+  },
+  {
+    "start_date": "2025-11-29T14:00:00+00:00",
+    "session_type": "Sprint",
+    "country": "Qatar",
+    "circuit_name": "Lusail"
+  },
+  {
+    "start_date": "2025-11-29T18:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "Qatar",
+    "circuit_name": "Lusail"
+  },
+  {
+    "start_date": "2025-11-30T15:00:00+00:00",
+    "session_type": "Race",
+    "country": "Qatar",
+    "circuit_name": "Lusail"
+  },
+  {
+    "start_date": "2025-12-06T14:00:00+00:00",
+    "session_type": "Qualifying",
+    "country": "United Arab Emirates",
+    "circuit_name": "Yas Marina"
+  },
+  {
+    "start_date": "2025-12-07T13:00:00+00:00",
+    "session_type": "Race",
+    "country": "United Arab Emirates",
+    "circuit_name": "Yas Marina"
+  }
+]

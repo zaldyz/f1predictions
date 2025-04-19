@@ -93,7 +93,7 @@ class Predictions(commands.Cog):
     next_session_info = await getNextRaceInfo(self.bot)
     await interaction.response.send_message(f"{role.mention}\nThe next upcoming session **{next_session_info['circuit']}, {next_session_info['country']}: {next_session_info['session_type']}** starts in **{time_until(next_session_info['date_start'])}**.\nUse `/predict` to make your Top 10 prediction before the session starts!")
   
-  @app_commands.command(name="end_session", description=":warning: Please DO NOT use this, let me use it only for now :warning:")
+  @app_commands.command(name="end_session", description="Use this after a Qualifying or Race has ended to award points!")
   async def end_session(self, interaction: discord.Interaction):
     # Defer here
     await interaction.response.defer()
